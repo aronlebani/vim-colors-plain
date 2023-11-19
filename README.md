@@ -20,7 +20,7 @@ If you use a different plugin manager, consult the documentation for your plugin
 information. Then to use the colour scheme, set:
 ```
 set background=dark
-colorscheme plain-cterm
+colorscheme plain
 ```
 
 ## Screenshots
