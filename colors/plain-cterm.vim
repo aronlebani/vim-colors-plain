@@ -1,17 +1,21 @@
-" Name:       plain.vim
+" Name:       plain-cterm.vim
 " Version:    0.1
-" Maintainer: github.com/andreypopp
+" Maintainer: github.com/aronlebani
 " License:    The MIT License (MIT)
 "
 " Based on
 "
+"   https://github.com/chrsm/vim-colors-plain (MIT License)
+"
+" which is in turn based on
+"
 "   https://github.com/pbrisbin/vim-colors-off (MIT License)
 "
-" which in turn based on
+" which is in turn based on
 "
 "   https://github.com/reedes/vim-colors-pencil (MIT License)
 "
-"""
+"
 hi clear
 
 if exists('syntax on')
@@ -146,10 +150,13 @@ call s:h("ExtraWhitespace",  {"bg": s:error})
 call s:h("ErrorMsg",      {"fg": s:error})
 hi! link Error            ErrorMsg
 hi! link Question         ErrorMsg
+
 " __WarningMsg__
 call s:h("WarningMsg",    {"fg": s:warning})
+
 " __InfoMsg__
 call s:h("InfoMsg",       {"fg": s:dark_magenta, "cterm": "bold"})
+
 " __MoreMsg__
 call s:h("MoreMsg",       {"fg": s:norm_subtle, "cterm": "bold"})
 hi! link ModeMsg          MoreMsg
@@ -161,6 +168,7 @@ hi! link qfLineNr         NonText
 
 " __Visual__
 call s:h("Visual",        {"bg": s:visual, "fg": s:visual_fg})
+
 " __VisualNOS__
 call s:h("VisualNOS",     {"bg": s:bg_subtle, "fg": s:visual_fg})
 
@@ -168,10 +176,13 @@ call s:h("Ignore",        {"fg": s:bg})
 
 " __DiffAdd__
 call s:h("DiffAdd",       {"fg": s:dark_green})
+
 " __DiffDelete__
 call s:h("DiffDelete",    {"fg": s:dark_red})
+
 " __DiffChange__
 call s:h("DiffChange",    {"fg": s:dark_yellow})
+
 " __DiffText__
 call s:h("DiffText",      {"fg": s:constant})
 
