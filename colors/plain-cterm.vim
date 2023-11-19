@@ -57,11 +57,12 @@ let s:bg_subtle        = s:dark_white
 let s:norm             = s:none
 let s:norm_subtle      = s:black
 let s:visual           = s:cyan
-let s:visual_fg        = s:white
-let s:cursor_line      = {"cterm": "20"}
+let s:visual_fg        = s:always_dark_black
+let s:cursor_line      = s:dark_blue
+let s:cursor_column    = s:black
 let s:constant         = s:cyan
 let s:comment          = s:black
-let s:selection        = s:yellow
+let s:selection        = s:magenta
 let s:selection_fg     = s:always_dark_black
 let s:ok               = s:green
 let s:warning          = s:dark_yellow
@@ -223,6 +224,7 @@ call s:h("WildMenu",      {"cterm": "underline,bold", "bg": s:bg, "fg": s:norm})
 call s:h("Pmenu",         {"fg": s:norm, "bg": s:cursor_line})
 hi! link PmenuSbar        Pmenu
 hi! link PmenuThumb       Pmenu
+
 " __PmenuSel__
 call s:h("PmenuSel",      {"fg": s:norm, "bg": s:cursor_line, "cterm": "bold"})
 
@@ -232,11 +234,12 @@ hi! link TabLineFill      Normal
 
 " __CursorLine__
 call s:h("CursorLine",    {"bg": s:cursor_line})
+
 " __CursorColumn__
-call s:h("ColorColumn",   {"bg": s:cursor_line})
+call s:h("ColorColumn",   {"bg": s:cursor_column})
 
 " __MatchParen__
-call s:h("MatchParen",    {"bg": s:yellow, "fg": s:always_dark_black})
+call s:h("MatchParen",    {"bg": s:none, "fg": s:yellow})
 
 hi! link htmlH1 Normal
 hi! link htmlH2 Normal
@@ -311,5 +314,5 @@ hi link tsxCloseTagName Constant
 hi link tsxAttrib Constant
 
 " __Search__ (make sure it comes after everything else)
-call s:h("Search",        {"bg": s:selection, "fg": s:selection_fg})
+call s:h("Search",        {"bg": s:selection, "fg": s:selection_fg})                                                           
 hi! link IncSearch Search
